@@ -4,10 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Crypto Chart</title>
-  <link rel="stylesheet" href="/static/css/main.[hash].css">
+  {% if main_css %}
+    <link rel="stylesheet" href="{{main_css}}">
+  {% endif %}
 </head>
 <body>
   <div id="root"></div>
-  <script src="/static/js/main.[hash].js"></script>
+  {% if main_js %}
+    <script src="{{main_js}}"></script>
+  {% endif %}
 </body>
 </html>

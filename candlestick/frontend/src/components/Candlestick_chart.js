@@ -23,7 +23,7 @@ const CandlestickChart = () => {
       y: [candle.open, candle.high, candle.low, candle.close]
     }));
 
-    setSeries([{  chartData }]);
+    setSeries([{ data: chartData }]);
     setOptions({
       chart: { type: 'candlestick', height: 400 },
       title: { text: `${symbol} ${interval} Chart`, align: 'left' },

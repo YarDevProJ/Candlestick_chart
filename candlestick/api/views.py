@@ -6,11 +6,18 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 import requests
+from .utils import get_static_files
 
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'index.html')
+    #return HttpResponse("Hello!")
+
+    files = get_static_files()
+    return render(request, 'index.html', {
+        'main_js': files['js'],
+        'main_css': files['css'],
+    })
 
 @api_view(['GET'])
 def get_candles(request):
