@@ -4,7 +4,7 @@ import Chart from 'react-apexcharts';
 
 const CandlestickChart = () => {
   const [options, setOptions] = useState({});
-  const [series, setSeries] = useState([{ data: [] }]);
+  const [series, setSeries] = useState([{  [] }]);
   const [symbol, setSymbol] = useState('BTCUSDT');
   const [interval, setInterval] = useState('1h');
 
@@ -23,7 +23,7 @@ const CandlestickChart = () => {
       y: [candle.open, candle.high, candle.low, candle.close]
     }));
 
-    setSeries([{ data: chartData }]);
+    setSeries([{  chartData }]);
     setOptions({
       chart: { type: 'candlestick', height: 400 },
       title: { text: `${symbol} ${interval} Chart`, align: 'left' },

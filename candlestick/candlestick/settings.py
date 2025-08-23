@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "api",
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,12 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+ASGI_APPLICATION = 'candlestick.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channel.layers.InMemoryChannelLayer',
+    }
+}
